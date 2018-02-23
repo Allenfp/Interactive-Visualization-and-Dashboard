@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Belly Button Diversity</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</head>
+<body>
+
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="text-center">Belly Button Biodiversity Dashboard</h1>
+        <p class="text-center">Use the interactive charts below to explore the dataset.</p>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div style="background-color: #eee; border: thin solid black;" class="col-xs-2 col-sm-2 col-md-2 col-lg-2 img-rounded">
+            <p>SELECT Sample:</p>
+            <!-- https://www.w3schools.com/tags/ev_onchange.asp -->
+            <select id="sample_select" onchange="changeData(this.value)"></select>
+        </div>
+        
+        
+        </div>
+        <div id="sample_info" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            
+            
+        </div>
+
+        <div id="pie_graph" class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+            
+            
+        </div>
+        <div id="needle_graph" class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+            
+            
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        
+        
+    </div>
+</div>
+</div>
+
+<script src="{{url_for('static', filename='app.js')}}"></script>
+</body>
+</html>
