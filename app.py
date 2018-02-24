@@ -30,16 +30,17 @@ def names():
 # #List of OTU descriptions.
 @app.route('/otu')
 def otus():
-    otu_list = []
-    otu_desc = (session.query(Otu.lowest_taxonomic_unit_found))
-    for otu in otu_desc:
-        otu_list.append(otu)
-    return jsonify(otu_list)
+    otu_dict = {}
+    otu_desc = (session.query(Otu.lowest_taxonomic_unit_found, Otu.otu_id))
+    for otu, id in otu_desc:
+        otu_dict[id] = otu
+        
+    return jsonify(otu_dict)
 
 # #MetaData for given Sample
 @app.route('/metadata/<sample>')
 def metadata(sample):
-    sample_ = sample.replace("bb_","")
+    sample_ = sample.lower().replace("bb_","")
     meta_info = (session.query(Samples_metadata).filter(Samples_metadata.SAMPLEID == sample_))
     meta_dict = {}
 
@@ -75,18 +76,20 @@ def samples(sample):
     lst1 = []
     lst2 = []
 
+    sample_info = sorted(sample_info, key=lambda x: x[1], reverse=True)
+
     for otu, values in sample_info:
         if values > 0:
             lst1.append(otu)
             lst2.append(values)
         else:
             pass
-
+    
     dict1 = {
         "otu_ids": lst1
     }
     dict2 = {
-        "otu_ids": lst2
+        "sample_values": lst2
     }
     
 

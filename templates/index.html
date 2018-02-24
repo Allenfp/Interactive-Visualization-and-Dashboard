@@ -7,9 +7,11 @@
     <title>Belly Button Diversity</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.js"></script>
 
 </head>
 <body>
+
 
 <div class="jumbotron">
     <div class="container">
@@ -19,20 +21,25 @@
 </div>
 
 
-<div class="container">
-    <div class="row">
-        <div style="background-color: #eee; border: thin solid black;" class="col-xs-2 col-sm-2 col-md-2 col-lg-2 img-rounded">
-            <p>SELECT Sample:</p>
+<div class="container" style="height: 500px;">
+    <div style="height: 500px;" class="row  col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        <div style="background-color: #eee; border: thin solid black; margin-bottom: .5em; height: 100px;" class="img-rounded ">
+            <p class="text-center">SELECT Sample:</p>
             <!-- https://www.w3schools.com/tags/ev_onchange.asp -->
-            <select id="sample_select" onchange="changeData(this.value)"></select>
+            <select id="sample_select" class="text-center" onchange="changeData(this.value)"></select>
         </div>
         
-        
-        </div>
-        <div id="sample_info" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            
-            
-        </div>
+            <div class="panel panel-default img-rounded " style="border: thin solid black; height: 300px">
+                <div class="panel-heading" style="background-color: rgb(56, 79, 209);"><h5 style="color:white;"> Sample Metadata </h5></div>
+                <div class="panel-body">
+                    <ul id="sample_info">
+
+                    </ul>
+
+                </div>
+              </div>
+            </div>
+
 
         <div id="pie_graph" class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
             
@@ -47,7 +54,7 @@
 
 
 <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div id="bubble_graph" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         
         
     </div>
@@ -55,5 +62,6 @@
 </div>
 
 <script src="{{url_for('static', filename='app.js')}}"></script>
+
 </body>
 </html>
