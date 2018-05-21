@@ -8,6 +8,7 @@ This dashboard utilizes various front and backend technologies to display belly 
 
 ### Tools Used:
 Front End: JavaScript, HTML5, Bootstrap, Plotly.js, D3.js 
+
 Back End: Python, Flask, SQLAlchemy, SQLite, JSON
 
 ### Image(s):
