@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Belly Button Diversity</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.js"></script>
+
+</head>
+<body>
+
+
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="text-center">Belly Button Biodiversity Dashboard</h1>
+        <h4 class="text-center">Use the interactive charts below to explore the dataset.</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row  col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        <div style="background-color: #eee; border: thin solid black; margin-bottom: .5em; height: 100px;" class="img-rounded ">
+            <p class="text-center">SELECT Sample:</p>
+            <select id="sample_select" class="text-center" onchange="changeData(this.value)"></select>
+        </div>
+        
+            <div class="panel panel-default img-rounded " style="border: thin solid black; height: 300px">
+                <div class="panel-heading" style="background-color: rgb(56, 79, 209);"><h5 style="color:white;"> Sample Metadata </h5></div>
+                <div class="panel-body">
+                    <ul id="sample_info">
+
+                    </ul>
+
+                </div>
+              </div>
+            </div>
+
+
+        <div id="pie_graph" class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+            
+            
+        </div>
+        <div id="needle_graph" class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+            
+            
+    </div>
+
+    <div class="row">
+        <div id="bubble_graph" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            
+        </div>
+    </div>
+</div>
+
+<p>Created By: Allen F Partlow<br>
+    Front End: JavaScript, HTML5, Bootstrap, Plotly.js, D3.js <br>
+    Back End: Python, Flask, SQLAlchemy, SQLite, JSON </p>
+
+<script src="{{url_for('static', filename='app.js')}}"></script>
+
+</body>
+</html>
