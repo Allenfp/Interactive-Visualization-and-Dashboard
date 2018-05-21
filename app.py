@@ -65,8 +65,12 @@ def wfreq(sample):
 
     for data in wfreq_info:
         wfreq = data.WFREQ
+    
+    wf = {
+        "wf" : wfreq
+    }
 
-    return jsonify(wfreq)
+    return jsonify(wf)
 
 # #OTU IDs and Sample Values by Sample
 @app.route('/samples/<sample>')
