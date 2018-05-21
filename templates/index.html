@@ -16,16 +16,14 @@
 <div class="jumbotron">
     <div class="container">
         <h1 class="text-center">Belly Button Biodiversity Dashboard</h1>
-        <p class="text-center">Use the interactive charts below to explore the dataset.</p>
+        <h4 class="text-center">Use the interactive charts below to explore the dataset.</p>
     </div>
 </div>
 
-
-<div class="container" style="height: 500px;">
-    <div style="height: 500px;" class="row  col-xs-2 col-sm-2 col-md-2 col-lg-2">
+<div class="container">
+    <div class="row  col-xs-2 col-sm-2 col-md-2 col-lg-2">
         <div style="background-color: #eee; border: thin solid black; margin-bottom: .5em; height: 100px;" class="img-rounded ">
             <p class="text-center">SELECT Sample:</p>
-            <!-- https://www.w3schools.com/tags/ev_onchange.asp -->
             <select id="sample_select" class="text-center" onchange="changeData(this.value)"></select>
         </div>
         
@@ -49,17 +47,17 @@
             
             
     </div>
-</div>
 
-
-
-<div class="row">
-    <div id="bubble_graph" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        
-        
+    <div class="row">
+        <div id="bubble_graph" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            
+        </div>
     </div>
 </div>
-</div>
+
+<p>Created By: Allen F Partlow<br>
+    Front End: JavaScript, HTML5, Bootstrap, Plotly.js, D3.js <br>
+    Back End: Python, Flask, SQLAlchemy, SQLite, JSON </p>
 
 <script src="{{url_for('static', filename='app.js')}}"></script>
 
